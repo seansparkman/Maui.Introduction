@@ -16,9 +16,9 @@
                 HorizontalOptions="Center" />
 
             <Label
-                Text="Hello, World!"
+                Text="Hello, North Dallas Developer Group"
                 SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
+                FontSize="27"
                 HorizontalOptions="Center" />
 
             <Label
