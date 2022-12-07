@@ -1,7 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Introduction.MainPage">
+             xmlns:viewModels="clr-namespace:Introduction.ViewModels"
+             x:Class="Introduction.MainPage"
+             x:DataType="viewModels:MainViewModel">
+    <ContentPage.BindingContext>
+        <viewModels:MainViewModel />
+    </ContentPage.BindingContext>
 
     <ScrollView>
         <VerticalStackLayout
@@ -29,10 +34,9 @@
                 HorizontalOptions="Center" />
 
             <Button
-                x:Name="CounterBtn"
-                Text="Click me"
+                Command="{Binding IncrementCountCommand}"
+                Text="{Binding Count, StringFormat='You clicked {0} times', TargetNullValue='Click me!'}"
                 SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
                 HorizontalOptions="Center" />
 
         </VerticalStackLayout>
